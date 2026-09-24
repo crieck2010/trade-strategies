@@ -164,6 +164,59 @@ Register it for the agents with
 
 See [CHANGELOG.md](CHANGELOG.md).
 
+## The maths
+
+**What you learn.** How raw bars become trading decisions: each strategy is
+a small piece of signal arithmetic — a moving-average cross, a z-score
+extreme, a volatility-channel break — evaluated bar by bar, emitting an
+edge-triggered signal only when its regime *changes*.
+
+**Why it matters.** "Bars in, signals out" with no backtester import means
+the maths must stand on its own: inspectable, parameter-explicit, and free
+of lookahead by construction. `Signal.strength` (0–1) carries conviction so
+sizers downstream can scale by it, and every tunable lives in
+`DEFAULT_PARAMS` with unknown-parameter typos failing fast.
+
+**The maths.**
+
+- *Edge-triggered signals*: a strategy tracks its own regime per symbol and
+  emits `LONG` / `SHORT` / `EXIT` only on a transition — never a stream of
+  repeats. `warmup_bars` gates the first signal so indicators are defined.
+- *Z-score reversion*: `z = (price − mean_n) / stdev_n` over the trailing
+  window; `zscore_reversion` (defaults: lookback 20, `entry_z=2.0`,
+  `exit_z=0.5`) fades ±2σ extremes and covers inside ±0.5σ.
+- *Trend*: dual SMA/EMA crosses (e.g. 20/50), MACD line vs. signal line,
+  Donchian channel breakouts (highest high / lowest low over N bars), and
+  Supertrend — ATR bands that only tighten in the position's favor and flip
+  on a genuine close through the band.
+- *Mean reversion*: Wilder's RSI (Connors-style RSI(2) washouts above a
+  trend filter), Bollinger band tags faded back to the midline, stochastic
+  washouts bought on recovery.
+- *Volatility / volume*: Keltner ATR-channel breakouts with midline exits,
+  Bollinger-bandwidth squeezes traded on resolution, OBV trend-following via
+  the OBV line's own moving-average cross, and fades of stretches from a
+  rolling VWAP.
+- *Multi-asset & meta*: `pairs_trading` trades the z-score of the A/B price
+  ratio dollar-neutral; `cross_sectional_momentum` rotates into trailing-
+  return winners; `ensemble_vote` acts only when ≥ `min_votes` (default 2)
+  member strategies agree per symbol; `trailing_stop` is an ATR-multiple
+  exit overlay for any strategy; `regime_filter` uses ADX to switch between
+  a trend leg and a mean-reversion leg.
+- *No lookahead*: signals use bars up to and including bar *t*; the
+  trade-backtest bridge fills them at bar *t+1*'s open.
+
+**Honest limitations.**
+
+- `TrailingStop` and the multi-asset strategies track *virtual* positions
+  from their own signals — a missed fill in live trading desyncs them, so
+  reconcile against real positions.
+- Edge-triggered signals mean a trend already underway when warmup ends
+  produces no entry; the cross must be observed.
+- No transaction-cost awareness lives inside strategies — costs are the
+  execution handler's job in trade-backtest.
+- Indicator math is textbook (SMA/EMA/RSI/MACD/ATR); the edge, if any, is in
+  the regime logic and parameters, not the formulas.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
