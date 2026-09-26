@@ -178,7 +178,12 @@ def run_backtest(engine_bars, features):
         """Target quantity = signal.strength (equity fraction) * equity / price."""
 
         def size(self, signal, price, portfolio):
-            from trade_backtest.models import SignalAction as SA
+            # NOTE: compare against trade_strategies.base.SignalAction --
+            # that is the enum the strategy emits. trade_backtest.models
+            # defines a second, distinct SignalAction class with identical
+            # members; comparing against it is always False and turned
+            # every EXIT into a full-equity BUY (run 2 invalid).
+            from trade_strategies.base import SignalAction as SA
             if signal.action == SA.EXIT:
                 return 0.0
             qty = signal.strength * portfolio.equity / price
