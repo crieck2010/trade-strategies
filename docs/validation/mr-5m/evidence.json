@@ -1,0 +1,518 @@
+{
+  "strategy": "MR-5M",
+  "trial": 2,
+  "pre_registration_commit": "998f2a0",
+  "smoke": false,
+  "run_started_utc": "2026-09-26T22:20:16.143381+00:00",
+  "run_finished_utc": "2026-09-26T22:29:44.439331+00:00",
+  "data": {
+    "source": "Binance.US public klines via trade-data-crypto BinanceUSPublicProvider",
+    "range": [
+      "2024-01-01",
+      "2026-09-26"
+    ],
+    "range_note": "provider uses [start, end); end=2026-09-26 includes all 2026-09-25 bars, matching the pre-registered '2024-01-01 through 2026-09-25'",
+    "symbols": [
+      "BTC/USD",
+      "ETH/USD"
+    ],
+    "bars_per_symbol": {
+      "BTC/USD": 167928,
+      "ETH/USD": 167928
+    },
+    "engine_bars": 335856
+  },
+  "costs_bps_per_side": {
+    "taker": 2.0,
+    "half_spread": 2.0,
+    "slippage": 2.0,
+    "total": 6.0
+  },
+  "walk_forward": {
+    "train_bars": 24192,
+    "test_bars": 4032,
+    "step_bars": 4032,
+    "embargo_bars": 288,
+    "periods_per_year": 105120,
+    "n_folds": 35,
+    "n_oos_bars": 141120,
+    "folds": [
+      {
+        "fold": 0,
+        "train_start": "2025-02-19T13:05:00+00:00",
+        "train_end": "2025-05-14T13:00:00+00:00",
+        "test_start": "2025-05-15T13:05:00+00:00",
+        "test_end": "2025-05-29T13:00:00+00:00",
+        "oos_sharpe": -0.7553181266983366,
+        "oos_return": -0.0010920053830039134,
+        "oos_max_drawdown": -0.007383458289728861,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 1,
+        "train_start": "2025-03-05T13:05:00+00:00",
+        "train_end": "2025-05-28T13:00:00+00:00",
+        "test_start": "2025-05-29T13:05:00+00:00",
+        "test_end": "2025-06-12T13:00:00+00:00",
+        "oos_sharpe": -2.2755055449570243,
+        "oos_return": -0.0033263394773731525,
+        "oos_max_drawdown": -0.008941048106309912,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 2,
+        "train_start": "2025-03-19T13:05:00+00:00",
+        "train_end": "2025-06-11T13:00:00+00:00",
+        "test_start": "2025-06-12T13:05:00+00:00",
+        "test_end": "2025-06-26T13:00:00+00:00",
+        "oos_sharpe": -6.4649971550667615,
+        "oos_return": -0.012646252784778711,
+        "oos_max_drawdown": -0.02138227271954729,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 3,
+        "train_start": "2025-04-02T13:05:00+00:00",
+        "train_end": "2025-06-25T13:00:00+00:00",
+        "test_start": "2025-06-26T13:05:00+00:00",
+        "test_end": "2025-07-10T13:00:00+00:00",
+        "oos_sharpe": 2.3461506537814354,
+        "oos_return": 0.0024383194183899004,
+        "oos_max_drawdown": -0.004901615304121032,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 4,
+        "train_start": "2025-04-16T13:05:00+00:00",
+        "train_end": "2025-07-09T13:00:00+00:00",
+        "test_start": "2025-07-10T13:05:00+00:00",
+        "test_end": "2025-07-24T13:00:00+00:00",
+        "oos_sharpe": 10.516078832391086,
+        "oos_return": 0.018591141972518876,
+        "oos_max_drawdown": -0.003579359421690076,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 5,
+        "train_start": "2025-04-30T13:05:00+00:00",
+        "train_end": "2025-07-23T13:00:00+00:00",
+        "test_start": "2025-07-24T13:05:00+00:00",
+        "test_end": "2025-08-07T13:00:00+00:00",
+        "oos_sharpe": -1.9875856605668887,
+        "oos_return": -0.003162141006898267,
+        "oos_max_drawdown": -0.011047022589374178,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 6,
+        "train_start": "2025-05-14T13:05:00+00:00",
+        "train_end": "2025-08-06T13:00:00+00:00",
+        "test_start": "2025-08-07T13:05:00+00:00",
+        "test_end": "2025-08-21T13:00:00+00:00",
+        "oos_sharpe": 0.7037285665982099,
+        "oos_return": 0.0012577159325080078,
+        "oos_max_drawdown": -0.007661565613024113,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 7,
+        "train_start": "2025-05-28T13:05:00+00:00",
+        "train_end": "2025-08-20T13:00:00+00:00",
+        "test_start": "2025-08-21T13:05:00+00:00",
+        "test_end": "2025-09-04T13:00:00+00:00",
+        "oos_sharpe": -6.86610774291267,
+        "oos_return": -0.011553880216300105,
+        "oos_max_drawdown": -0.013845879820720719,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 8,
+        "train_start": "2025-06-11T13:05:00+00:00",
+        "train_end": "2025-09-03T13:00:00+00:00",
+        "test_start": "2025-09-04T13:05:00+00:00",
+        "test_end": "2025-09-18T13:00:00+00:00",
+        "oos_sharpe": 4.001040899490916,
+        "oos_return": 0.004153580594456807,
+        "oos_max_drawdown": -0.003601070310907173,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 9,
+        "train_start": "2025-06-25T13:05:00+00:00",
+        "train_end": "2025-09-17T13:00:00+00:00",
+        "test_start": "2025-09-18T13:05:00+00:00",
+        "test_end": "2025-10-02T13:00:00+00:00",
+        "oos_sharpe": -7.498692506477379,
+        "oos_return": -0.010377439814508227,
+        "oos_max_drawdown": -0.011830274898956272,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 10,
+        "train_start": "2025-07-09T13:05:00+00:00",
+        "train_end": "2025-10-01T13:00:00+00:00",
+        "test_start": "2025-10-02T13:05:00+00:00",
+        "test_end": "2025-10-16T13:00:00+00:00",
+        "oos_sharpe": -3.706132993138147,
+        "oos_return": -0.010581599784082907,
+        "oos_max_drawdown": -0.018596364091728934,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 11,
+        "train_start": "2025-07-23T13:05:00+00:00",
+        "train_end": "2025-10-15T13:00:00+00:00",
+        "test_start": "2025-10-16T13:05:00+00:00",
+        "test_end": "2025-10-30T13:00:00+00:00",
+        "oos_sharpe": -5.652151965888607,
+        "oos_return": -0.009517127121756563,
+        "oos_max_drawdown": -0.011186036145797496,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 12,
+        "train_start": "2025-08-06T13:05:00+00:00",
+        "train_end": "2025-10-29T13:00:00+00:00",
+        "test_start": "2025-10-30T13:05:00+00:00",
+        "test_end": "2025-11-13T13:00:00+00:00",
+        "oos_sharpe": -4.6627082495375065,
+        "oos_return": -0.011326601599187858,
+        "oos_max_drawdown": -0.020928345441648122,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 13,
+        "train_start": "2025-08-20T13:05:00+00:00",
+        "train_end": "2025-11-12T13:00:00+00:00",
+        "test_start": "2025-11-13T13:05:00+00:00",
+        "test_end": "2025-11-27T13:00:00+00:00",
+        "oos_sharpe": 0.01897855903004548,
+        "oos_return": -6.640760928444678e-05,
+        "oos_max_drawdown": -0.014295796869483457,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 14,
+        "train_start": "2025-09-03T13:05:00+00:00",
+        "train_end": "2025-11-26T13:00:00+00:00",
+        "test_start": "2025-11-27T13:05:00+00:00",
+        "test_end": "2025-12-11T13:00:00+00:00",
+        "oos_sharpe": -8.219737803943747,
+        "oos_return": -0.014185575158057184,
+        "oos_max_drawdown": -0.017948363508571208,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 15,
+        "train_start": "2025-09-17T13:05:00+00:00",
+        "train_end": "2025-12-10T13:00:00+00:00",
+        "test_start": "2025-12-11T13:05:00+00:00",
+        "test_end": "2025-12-25T13:00:00+00:00",
+        "oos_sharpe": -0.014158208284410386,
+        "oos_return": -5.815842795997561e-05,
+        "oos_max_drawdown": -0.007078588295728716,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 16,
+        "train_start": "2025-10-01T13:05:00+00:00",
+        "train_end": "2025-12-24T13:00:00+00:00",
+        "test_start": "2025-12-25T13:05:00+00:00",
+        "test_end": "2026-01-08T13:00:00+00:00",
+        "oos_sharpe": -1.2222930363844946,
+        "oos_return": -0.0011755901833127025,
+        "oos_max_drawdown": -0.00539390491023628,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 17,
+        "train_start": "2025-10-15T13:05:00+00:00",
+        "train_end": "2026-01-07T13:00:00+00:00",
+        "test_start": "2026-01-08T13:05:00+00:00",
+        "test_end": "2026-01-22T13:00:00+00:00",
+        "oos_sharpe": 1.325814774795498,
+        "oos_return": 0.002129939863763086,
+        "oos_max_drawdown": -0.009582377883231352,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 18,
+        "train_start": "2025-10-29T13:05:00+00:00",
+        "train_end": "2026-01-21T13:00:00+00:00",
+        "test_start": "2026-01-22T13:05:00+00:00",
+        "test_end": "2026-02-05T13:00:00+00:00",
+        "oos_sharpe": -8.790161337380333,
+        "oos_return": -0.029821240963716078,
+        "oos_max_drawdown": -0.03079864663220666,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 19,
+        "train_start": "2025-11-12T13:05:00+00:00",
+        "train_end": "2026-02-04T13:00:00+00:00",
+        "test_start": "2026-02-05T13:05:00+00:00",
+        "test_end": "2026-02-19T13:00:00+00:00",
+        "oos_sharpe": -3.6224543036209194,
+        "oos_return": -0.011387250143833683,
+        "oos_max_drawdown": -0.022396597121440043,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 20,
+        "train_start": "2025-11-26T13:05:00+00:00",
+        "train_end": "2026-02-18T13:00:00+00:00",
+        "test_start": "2026-02-19T13:05:00+00:00",
+        "test_end": "2026-03-05T13:00:00+00:00",
+        "oos_sharpe": 0.07326736010520075,
+        "oos_return": 0.00010034405168668492,
+        "oos_max_drawdown": -0.014384447914175369,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 21,
+        "train_start": "2025-12-10T13:05:00+00:00",
+        "train_end": "2026-03-04T13:00:00+00:00",
+        "test_start": "2026-03-05T13:05:00+00:00",
+        "test_end": "2026-03-19T13:00:00+00:00",
+        "oos_sharpe": -4.671388371491534,
+        "oos_return": -0.00783176631880056,
+        "oos_max_drawdown": -0.008425294715297182,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 22,
+        "train_start": "2025-12-24T13:05:00+00:00",
+        "train_end": "2026-03-18T13:00:00+00:00",
+        "test_start": "2026-03-19T13:05:00+00:00",
+        "test_end": "2026-04-02T13:00:00+00:00",
+        "oos_sharpe": -6.860583355277448,
+        "oos_return": -0.011415461658965231,
+        "oos_max_drawdown": -0.015858411218634294,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 23,
+        "train_start": "2026-01-07T13:05:00+00:00",
+        "train_end": "2026-04-01T13:00:00+00:00",
+        "test_start": "2026-04-02T13:05:00+00:00",
+        "test_end": "2026-04-16T13:00:00+00:00",
+        "oos_sharpe": 0.23288895486493388,
+        "oos_return": 0.00026435957399240095,
+        "oos_max_drawdown": -0.005453096837342963,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 24,
+        "train_start": "2026-01-21T13:05:00+00:00",
+        "train_end": "2026-04-15T13:00:00+00:00",
+        "test_start": "2026-04-16T13:05:00+00:00",
+        "test_end": "2026-04-30T13:00:00+00:00",
+        "oos_sharpe": 1.6049443973309419,
+        "oos_return": 0.00224573709493181,
+        "oos_max_drawdown": -0.007255727159936387,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 25,
+        "train_start": "2026-02-04T13:05:00+00:00",
+        "train_end": "2026-04-29T13:00:00+00:00",
+        "test_start": "2026-04-30T13:05:00+00:00",
+        "test_end": "2026-05-14T13:00:00+00:00",
+        "oos_sharpe": -2.9643475717212646,
+        "oos_return": -0.0033009187624970515,
+        "oos_max_drawdown": -0.007837420115204163,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 26,
+        "train_start": "2026-02-18T13:05:00+00:00",
+        "train_end": "2026-05-13T13:00:00+00:00",
+        "test_start": "2026-05-14T13:05:00+00:00",
+        "test_end": "2026-05-28T13:00:00+00:00",
+        "oos_sharpe": -13.218316936990716,
+        "oos_return": -0.017534808524427792,
+        "oos_max_drawdown": -0.020596156923753717,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 27,
+        "train_start": "2026-03-04T13:05:00+00:00",
+        "train_end": "2026-05-27T13:00:00+00:00",
+        "test_start": "2026-05-28T13:05:00+00:00",
+        "test_end": "2026-06-11T13:00:00+00:00",
+        "oos_sharpe": -1.5163946537861106,
+        "oos_return": -0.0040291298575689805,
+        "oos_max_drawdown": -0.019803973410217557,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 28,
+        "train_start": "2026-03-18T13:05:00+00:00",
+        "train_end": "2026-06-10T13:00:00+00:00",
+        "test_start": "2026-06-11T13:05:00+00:00",
+        "test_end": "2026-06-25T13:00:00+00:00",
+        "oos_sharpe": -3.3087797623797752,
+        "oos_return": -0.00524121292590396,
+        "oos_max_drawdown": -0.010299083338945358,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 29,
+        "train_start": "2026-04-01T13:05:00+00:00",
+        "train_end": "2026-06-24T13:00:00+00:00",
+        "test_start": "2026-06-25T13:05:00+00:00",
+        "test_end": "2026-07-09T13:00:00+00:00",
+        "oos_sharpe": 1.9834629285523522,
+        "oos_return": 0.003370501891521327,
+        "oos_max_drawdown": -0.006575294367103912,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 30,
+        "train_start": "2026-04-15T13:05:00+00:00",
+        "train_end": "2026-07-08T13:00:00+00:00",
+        "test_start": "2026-07-09T13:05:00+00:00",
+        "test_end": "2026-07-23T13:00:00+00:00",
+        "oos_sharpe": -3.0032537098321326,
+        "oos_return": -0.003168591971942414,
+        "oos_max_drawdown": -0.0053611504187903725,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 31,
+        "train_start": "2026-04-29T13:05:00+00:00",
+        "train_end": "2026-07-22T13:00:00+00:00",
+        "test_start": "2026-07-23T13:05:00+00:00",
+        "test_end": "2026-08-06T13:00:00+00:00",
+        "oos_sharpe": -2.059986398063554,
+        "oos_return": -0.0023732665749096604,
+        "oos_max_drawdown": -0.007321882868355778,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 32,
+        "train_start": "2026-05-13T13:05:00+00:00",
+        "train_end": "2026-08-05T13:00:00+00:00",
+        "test_start": "2026-08-06T13:05:00+00:00",
+        "test_end": "2026-08-20T13:00:00+00:00",
+        "oos_sharpe": -1.3278736137045157,
+        "oos_return": -0.0009799091398020598,
+        "oos_max_drawdown": -0.004150339943166936,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 33,
+        "train_start": "2026-05-27T13:05:00+00:00",
+        "train_end": "2026-08-19T13:00:00+00:00",
+        "test_start": "2026-08-20T13:05:00+00:00",
+        "test_end": "2026-09-03T22:00:00+00:00",
+        "oos_sharpe": -2.8315989211247516,
+        "oos_return": -0.003585897631674606,
+        "oos_max_drawdown": -0.0060536747733300755,
+        "n_oos_bars": 4032
+      },
+      {
+        "fold": 34,
+        "train_start": "2026-06-10T13:05:00+00:00",
+        "train_end": "2026-09-02T22:00:00+00:00",
+        "test_start": "2026-09-03T22:05:00+00:00",
+        "test_end": "2026-09-17T22:00:00+00:00",
+        "oos_sharpe": -5.07589097771153,
+        "oos_return": -0.006193473117424908,
+        "oos_max_drawdown": -0.011095095311568937,
+        "n_oos_bars": 4032
+      }
+    ]
+  },
+  "gates": [
+    {
+      "name": "deflated_sharpe",
+      "metric": "dsr",
+      "op": "gte",
+      "threshold": 0.95,
+      "value": 0.0,
+      "passed": false,
+      "description": "DSR >= 0.95: under the null of no skill, the chance the true Sharpe is positive is at least 95% after correcting for the number of trials."
+    },
+    {
+      "name": "oos_sharpe",
+      "metric": "median_oos_sharpe",
+      "op": "gt",
+      "threshold": 1.0,
+      "value": -2.2755055449570243,
+      "passed": false,
+      "description": "Median walk-forward out-of-sample Sharpe > 1.0: the edge must survive unseen data, not just the fitted window."
+    },
+    {
+      "name": "max_drawdown",
+      "metric": "max_drawdown",
+      "op": "gt",
+      "threshold": -0.15,
+      "value": -0.15667284628653522,
+      "passed": false,
+      "description": "Max drawdown > -15% (i.e. drawdown shallower than 15%): the strategy must be survivable, not just profitable."
+    },
+    {
+      "name": "regime_stability",
+      "metric": "worst_regime_sharpe",
+      "op": "gt",
+      "threshold": 0.0,
+      "value": -6.756706585451976,
+      "passed": false,
+      "description": "Worst-regime Sharpe > 0: the edge must not lose money in either the calm or the stress regime."
+    },
+    {
+      "name": "beats_benchmark_net",
+      "metric": "excess_return_vs_benchmark_after_costs",
+      "op": "gt",
+      "threshold": 0.0,
+      "value": 0.08382179738483497,
+      "passed": true,
+      "description": "Annualized excess return vs benchmark, after the cost haircut, > 0: edge must beat buy-and-hold net of costs. Skipped (not failed) when no benchmark series is supplied."
+    }
+  ],
+  "evidence": {
+    "dsr": 0.0,
+    "median_oos_sharpe": -2.2755055449570243,
+    "max_drawdown": -0.15667284628653522,
+    "worst_regime_sharpe": -6.756706585451976,
+    "excess_return_vs_benchmark_after_costs": 0.08382179738483497
+  },
+  "dsr_detail": {
+    "sharpe_hat": -2.521866237143587,
+    "n_obs": 141120,
+    "n_trials": 2,
+    "skewness": 0.13684456953165763,
+    "excess_kurtosis": 95.9073410558111,
+    "expected_sharpe_under_null": 1.171612659540703,
+    "dsr": 0.0
+  },
+  "regimes": {
+    "regimes": {
+      "calm": {
+        "n_bars": 70562,
+        "sharpe": -6.756706585451976,
+        "total_return": -0.03945305118105191,
+        "max_drawdown": -0.04030180870194966
+      },
+      "stress": {
+        "n_bars": 70558,
+        "sharpe": -2.7009155234183555,
+        "total_return": -0.11541456306796527,
+        "max_drawdown": -0.13564540775944534
+      }
+    },
+    "worst_regime": "calm",
+    "worst_regime_sharpe": -6.756706585451976,
+    "label_source": "vol_regime"
+  },
+  "strategy_annualized": -0.11426315039740764,
+  "btc_bh_annualized_net": -0.19808494778224262,
+  "final_equity": 79986.56726705849,
+  "n_signals": 4598,
+  "exit_reasons": {
+    "reversion": 1026,
+    "stop": 490,
+    "time": 783
+  }
+}
