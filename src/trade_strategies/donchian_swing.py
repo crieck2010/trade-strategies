@@ -15,6 +15,11 @@ owns the flat/holding state machine per symbol. The strategy tracks its own
 intended positions so the 20-position cap and momentum ranking are enforced at
 signal time; exits for non-held symbols are harmless no-ops at the engine
 (``target 0 - position 0 = no order``).
+
+Validation outcome (2026-09-26): **KILLED** — one pre-registered trial
+through the walk-forward overfit gates failed 2 of 5 (median OOS Sharpe 0.87
+< 1.0; OOS max drawdown −40.2% > 15% limit). Not viable; not registered for
+agent use. See docs/validation/donchian-20-10/.
 """
 
 from __future__ import annotations

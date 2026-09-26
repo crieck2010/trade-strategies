@@ -205,6 +205,41 @@ sizers downstream can scale by it, and every tunable lives in
 - *No lookahead*: signals use bars up to and including bar *t*; the
   trade-backtest bridge fills them at bar *t+1*'s open.
 
+**Validated-then-killed example: DON-20/10-ATR.** `donchian_swing.py`
+implements a pre-registered long/flat swing strategy (Donchian 20-day
+breakout entries, 10-day / 2.5×ATR exits, 1% risk per trade, 10% cap per
+position, 20 max positions) that was run through the full overfit-gate
+protocol once, honestly, on 2026-09-26 — and **killed**. The maths it
+exercises:
+
+- *Donchian channel*: entry when `close_t > max(high_{t-20..t-1})`
+  (prior window — the current bar never sets its own trigger); exit when
+  `close_t < min(low_{t-10..t-1})`.
+- *Wilder ATR*: `ATR_t = (ATR_{t-1} × 19 + TR_t) / 20`, the smoothed true
+  range; the trailing stop sits `2.5 × ATR` below the entry close.
+- *ATR risk sizing*: `fraction = min(10%, 1% / (2.5 × ATR / close))` — one
+  percent of equity risked against the stop distance, capped at a tenth of
+  equity per name.
+- *Walk-forward*: rolling 756-day train / 252-day test / 252-day step with a
+  10-day embargo; the concatenated out-of-sample returns are the gating
+  series, so no in-sample number ever touches a gate.
+- *Deflated Sharpe (DSR)*: asks whether the observed Sharpe survives a
+  multiple-testing haircut — here with exactly one trial, so the haircut is
+  zero and the DSR is just the ordinary significance of the Sharpe.
+- *The five gates*: DSR ≥ 0.95, median OOS Sharpe > 1.0, OOS max drawdown <
+  15%, worst volatility-regime Sharpe > 0, and positive excess return vs
+  SPY net of costs. Any single failure kills the strategy; there are no
+  second runs.
+
+Result: DSR 1.00 (pass), median OOS Sharpe 0.87 (fail), OOS max drawdown
+−40.2% (fail), worst-regime Sharpe +0.61 (pass), +4.4%/yr vs SPY net
+(pass) — **KILL**, two gates failed. Full evidence (fold table, DSR inputs,
+gate table, pre-registration): `docs/validation/donchian-20-10/`. The two
+discarded runs are archived there too: run 1 hit a data bug (splits were
+double-adjusted), run 2 hit a harness bug (a duplicated `SignalAction`
+enum turned every EXIT into a full-equity BUY). Neither ever tested the
+strategy; the killed verdict comes from the one valid run.
+
 **Honest limitations.**
 
 - `TrailingStop` and the multi-asset strategies track *virtual* positions
