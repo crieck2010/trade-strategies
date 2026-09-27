@@ -32,6 +32,9 @@ A strategy enters the allocator's candidate pool iff ALL hold:
 | Deflated Sharpe Ratio | > 0.8 |
 | Excess return vs benchmark, net of costs | > 0 |
 | Sortino | > 0.75 |
+| Cost speed limit | cost Sharpe drag ≤ gross Sharpe / 3 (gross Sharpe > 0) |
+
+See "Gate 6 — cost speed limit" below for the maths.
 
 DSR `n_trials` counts every idea screened in the same research phase
 (the honesty rule from trial 4: only screened ideas count as trials).
@@ -78,6 +81,106 @@ REGCOND-1 is the unique Tier-1 validation — a statistically genuine edge
 Its trial-4 verdict under the pre-reform seven-gate set (invalidated, 4/7)
 stands as the historical record in `regcond-1/report.md`; the reform is
 prospective and does not rewrite it.
+
+## Gate 6 — cost speed limit (adopted 2026-09-27)
+
+Robert Carver's rule from *Systematic Trading*: every round-trip trade
+costs Sharpe units, and a strategy must not spend more than about one
+third of its gross edge on trading costs.
+
+### The maths
+
+Inputs (plain data, from the trial's cost model and backtest):
+
+- `turnover_ann` — annualised round-trip trades per year.
+- `round_trip_cost` — one round trip as a fraction of notional
+  (commission + spread + slippage, from the configured cost model).
+- `instrument_vol_ann` — annualised volatility of the traded instrument
+  as a fraction (daily log-return stdev × √252).
+- `gross_sharpe` — pre-cost Sharpe from the backtest.
+
+Derivation: trading `turnover_ann` round trips a year on one unit of
+notional bleeds `turnover_ann × round_trip_cost` per year in return
+terms. A pure return drag `d` on a return stream with annualised
+volatility `σ` reduces the Sharpe ratio by `d / σ` (to first order —
+the drag is treated as deterministic and vol is assumed unchanged).
+Hence the cost drag in Sharpe units:
+
+```
+cost_sharpe_drag = turnover_ann × round_trip_cost / instrument_vol_ann
+budget           = gross_sharpe / 3
+```
+
+**PASS iff `gross_sharpe > 0` AND `cost_sharpe_drag ≤ budget`.**
+
+Carver's rule of thumb: a typical single rule earns ~0.4 gross Sharpe,
+giving the familiar ~0.13 SR/yr default budget. This gate uses the
+strategy's *own* gross Sharpe adaptively — a stronger edge earns a
+larger turnover budget — rather than hard-coding 0.4.
+
+### Worked examples (regression-pinned in the test suite)
+
+| Market | Round-trip cost | Instr. vol | Cost per trade (SR) | Budget (0.4/3) | Max round trips/yr |
+|---|---|---|---|---|---|
+| Cheap futures | 2 bps | 10% | 0.002 | 0.133 | ~65 |
+| BTC | 40 bps | 80% | 0.005 | 0.133 | ~26 |
+
+The video figures (~65 and ~26) are reproduced: 65 passes / 67 fails for
+futures; 26 passes / 27 fails for BTC. The cost/vol assumptions above
+are documented here — they are the inputs consistent with Carver's
+figures, not figures from the video itself.
+
+### Multi-instrument strategies
+
+Costs and vols are notional-weighted: with weight
+`w_i = notional_i / total_notional`,
+
+```
+round_trip_cost   = Σ w_i × cost_i
+instrument_vol_ann = Σ w_i × vol_i
+```
+
+then the single-instrument gate runs. This ignores correlation between
+the instruments' cost/vol realisations — conservative enough for a gate,
+since diversification can only lower realised portfolio vol relative to
+the weighted sum.
+
+### Why this gate exists alongside "beat benchmark net"
+
+The benchmark gate depends on the cost model being *exactly right*.
+This gate bounds the *sensitivity* to cost-model error: a strategy
+spending 0.05 of its 0.4 edge on costs survives a 2× slippage
+mis-estimate; one spending 0.13 does not. It structurally favours higher
+timeframes — the same conclusion Carver draws, now enforced as a gate.
+
+### Machine-readable evidence
+
+Future trials record under `tier1_evidence.json`:
+
+```json
+"cost_speed_limit": {
+  "turnover_ann": 65.0,
+  "round_trip_cost": 0.0002,
+  "instrument_vol_ann": 0.10,
+  "gross_sharpe": 0.4,
+  "cost_sharpe_drag": 0.13,
+  "budget": 0.1333,
+  "pass": true
+}
+```
+
+Multi-instrument trials add an `instruments` array with the
+per-instrument cost/vol/weight breakdown. `trade-allocate`'s
+`validate_evidence()` should accept the block once present; the block is
+optional until a trial pre-registers under the post-2026-09-27 gate set.
+
+### Grandfathering
+
+The gate applies to trials **pre-registered after its adoption date
+(2026-09-27)**. Existing Tier-1 validations stand as recorded and are
+not retroactively re-judged: REGCOND-1 remains Tier-1 validated 5/5
+under the gate set in force at its trial. Pre-registrations continue to
+freeze the gate set in force at registration time (see Process notes).
 
 ## Process notes
 
