@@ -1,0 +1,182 @@
+{
+  "generated_at": "2026-09-27T02:47:54.995628+00:00",
+  "n_screened": 2,
+  "not_screened": {
+    "deferred_track1": [
+      "SENTDIV-1",
+      "ATTN-1",
+      "EVTDRIFT-1",
+      "SENTCAP-1"
+    ],
+    "unscreenable": {
+      "BASIS-1": "no keyless dated-future history"
+    },
+    "sketches": [
+      "VOLCAL-1",
+      "VOLSKEW-1",
+      "VOLDISP-1"
+    ]
+  },
+  "results": [
+    {
+      "idea": "RVBOND-1",
+      "module": "rvbond_1",
+      "params": {
+        "z_entry": 1.5,
+        "time_stop_days": 30,
+        "resid_window": 90,
+        "leg_weight": 0.5,
+        "symbols": [
+          "GLD",
+          "TLT"
+        ]
+      },
+      "simplifications": [
+        "90d OLS, coefficients + residual mean/std refreshed monthly (frozen within month)",
+        "exit at z crossing zero or 30-trading-day time stop",
+        "equal-dollar legs (0.5/0.5), no beta matching",
+        "5 bps/side + 50 bps/yr borrow on shorts"
+      ],
+      "thesis_line": "Intermarket RV: log(GLD/TLT) vs TIP-implied real-yield fair value; trade the residual, dollar-neutral.",
+      "note": "yfinance ETF daily, split/div adjusted; basis=pre_adjusted; 5 bps/side commission; 50 bps/yr borrow on shorts. Coefficients fit trailing-90d at prior month-end; fills t->t+1 via engine.",
+      "window": [
+        "2018-01-01",
+        "2026-09-25"
+      ],
+      "symbols_traded": [
+        "GLD",
+        "TLT"
+      ],
+      "metrics": {
+        "total_return": -0.34411571928466744,
+        "cagr": -0.04728936794746119,
+        "sharpe_ratio": -0.49310163312423333,
+        "sortino_ratio": -0.6948609090294472,
+        "max_drawdown": 0.4030834630419097,
+        "num_trades": 126.0,
+        "win_rate": 0.5158730158730159,
+        "profit_factor": 0.7702134326008999,
+        "final_equity": 65588.42807153326
+      },
+      "assumptions": {
+        "engine_version": "0.2.0",
+        "adjustment_basis": "pre_adjusted",
+        "adjustment_note": "Round-2 Phase B screening: yfinance ETF daily, split/div adjusted; basis=pre_adjusted; 5 bps/side commission; 50 bps/yr borrow on shorts. Coefficients fit trailing-90d at prior month-end; fills t->t+1 via engine.",
+        "corporate_actions_applied": {
+          "dividends": 0,
+          "splits": 0
+        },
+        "dividend_reinvestment": true,
+        "cost_model": {
+          "commission": {
+            "type": "PercentCommission",
+            "params": {
+              "rate": 0.0005
+            }
+          },
+          "slippage_entry_bps": 0.0,
+          "slippage_exit_bps": 0.0,
+          "half_spread_bps": 0.0,
+          "borrow_cost_annual_bps": 50.0,
+          "market_impact": null,
+          "disabled": false,
+          "disabled_reason": null
+        },
+        "borrow": {
+          "annual_bps": 50.0,
+          "total_paid": 1344.3609922892206,
+          "day_count": "actual/365"
+        },
+        "not_modeled": [
+          "market impact (no market_impact hook provided)",
+          "partial fills",
+          "latency",
+          "margin calls"
+        ],
+        "periods_per_year": 252
+      },
+      "elapsed_s": 0.2
+    },
+    {
+      "idea": "REGCOND-1",
+      "module": "regcond_1",
+      "params": {
+        "preset": "standard",
+        "symbols": [
+          "SPY",
+          "CPER",
+          "TLT",
+          "GLD"
+        ]
+      },
+      "simplifications": [
+        "CPER/GLD ETF proxies for copper/gold (not HG/GC futures)",
+        "classify_regime preset='standard', single preset",
+        "rebalance on first trading day of month using prior-month-end label",
+        "long-only; 5 bps/side"
+      ],
+      "thesis_line": "Macro-conditioned allocation: copper:gold regime switches fixed SPY/CPER/TLT/GLD weights; harvests cycle rotation without trailing-return signals.",
+      "note": "yfinance ETF daily, split/div adjusted; basis=pre_adjusted; 5 bps/side commission; long-only, no borrow. Regime via trade-macro copper:gold (CPER/GLD), preset=standard, trailing statistics only.",
+      "window": [
+        "2018-01-01",
+        "2026-09-25"
+      ],
+      "symbols_traded": [
+        "SPY",
+        "CPER",
+        "TLT",
+        "GLD"
+      ],
+      "metrics": {
+        "total_return": 1.35658797559043,
+        "cagr": 0.10346870030959732,
+        "sharpe_ratio": 0.9179075592038373,
+        "sortino_ratio": 1.2994890409862991,
+        "max_drawdown": 0.23110103661756976,
+        "num_trades": 90.0,
+        "win_rate": 0.7222222222222222,
+        "profit_factor": 5.0160773023618646,
+        "final_equity": 235658.79755904299
+      },
+      "assumptions": {
+        "engine_version": "0.2.0",
+        "adjustment_basis": "pre_adjusted",
+        "adjustment_note": "Round-2 Phase B screening: yfinance ETF daily, split/div adjusted; basis=pre_adjusted; 5 bps/side commission; long-only, no borrow. Regime via trade-macro copper:gold (CPER/GLD), preset=standard, trailing statistics only.",
+        "corporate_actions_applied": {
+          "dividends": 0,
+          "splits": 0
+        },
+        "dividend_reinvestment": true,
+        "cost_model": {
+          "commission": {
+            "type": "PercentCommission",
+            "params": {
+              "rate": 0.0005
+            }
+          },
+          "slippage_entry_bps": 0.0,
+          "slippage_exit_bps": 0.0,
+          "half_spread_bps": 0.0,
+          "borrow_cost_annual_bps": 50.0,
+          "market_impact": null,
+          "disabled": false,
+          "disabled_reason": null
+        },
+        "borrow": {
+          "annual_bps": 50.0,
+          "total_paid": 0.0,
+          "day_count": "actual/365"
+        },
+        "not_modeled": [
+          "market impact (no market_impact hook provided)",
+          "partial fills",
+          "latency",
+          "margin calls"
+        ],
+        "periods_per_year": 252
+      },
+      "elapsed_s": 0.3
+    }
+  ],
+  "errors": {}
+}
