@@ -1,0 +1,156 @@
+{
+  "status": "INVALID",
+  "run_id": "2026-09-27_zero-oos-folds",
+  "strategy": "TSMOM-CR",
+  "trial": 3,
+  "candidate": "B",
+  "pre_registration_commit": "42ecab2",
+  "gate_amendment_commit": "425745b",
+  "run_started_utc": "2026-09-27T02:25:40.750911+00:00",
+  "run_finished_utc": "2026-09-27T02:25:47.807080+00:00",
+  "venue": "Kraken",
+  "venue_report": {
+    "binance_us": {
+      "BTC/USD": {
+        "n_bars": 1981,
+        "first": "2019-09-17",
+        "last": "2026-09-25",
+        "expected_days": 2566,
+        "missing_days": 585,
+        "coverage": 0.7720187061574435,
+        "max_consecutive_gap_days": 585,
+        "gaps": [
+          [
+            "2023-07-15",
+            "2025-02-18",
+            585
+          ]
+        ]
+      },
+      "ETH/USD": {
+        "n_bars": 1980,
+        "first": "2019-09-18",
+        "last": "2026-09-25",
+        "expected_days": 2566,
+        "missing_days": 586,
+        "coverage": 0.7716289945440374,
+        "max_consecutive_gap_days": 585,
+        "gaps": [
+          [
+            "2019-09-17",
+            "2019-09-17",
+            1
+          ],
+          [
+            "2023-07-15",
+            "2025-02-18",
+            585
+          ]
+        ]
+      }
+    },
+    "kraken": {
+      "BTC/USD": {
+        "n_bars": 719,
+        "first": "2024-10-07",
+        "last": "2026-09-25",
+        "expected_days": 2566,
+        "missing_days": 1847,
+        "coverage": 0.28020265003897116,
+        "max_consecutive_gap_days": 1847,
+        "gaps": [
+          [
+            "2019-09-17",
+            "2024-10-06",
+            1847
+          ]
+        ]
+      },
+      "ETH/USD": {
+        "n_bars": 719,
+        "first": "2024-10-07",
+        "last": "2026-09-25",
+        "expected_days": 2566,
+        "missing_days": 1847,
+        "coverage": 0.28020265003897116,
+        "max_consecutive_gap_days": 1847,
+        "gaps": [
+          [
+            "2019-09-17",
+            "2024-10-06",
+            1847
+          ]
+        ]
+      }
+    },
+    "decision": "Kraken",
+    "reason": "Binance.US discontinuous (gap > 3 days or < 98% coverage); pre-registered fallback rule applied once, then frozen"
+  },
+  "data": {
+    "range_requested": [
+      "2019-09-17",
+      "2026-09-26"
+    ],
+    "symbols": [
+      "BTC/USD",
+      "ETH/USD"
+    ],
+    "engine_bars": 1438,
+    "daily_bars_per_symbol": 719,
+    "n_returns": 718
+  },
+  "walk_forward": {
+    "train_days": 728,
+    "test_days": 182,
+    "step_days": 182,
+    "embargo_days": 5,
+    "periods_per_year": 365,
+    "min_returns_for_one_fold": 915,
+    "n_folds": 0
+  },
+  "root_cause": "ZERO walk-forward folds fit the frozen geometry on the frozen venue's data. Geometry needs 915 daily returns for a single fold (728d train + 5d embargo + 182d test); the venue serves 719 daily bars -> 718 returns. The concatenated OOS series (the gated series) is empty, so none of the 7 gates can be evaluated. This is a data/geometry incompatibility, not a strategy result: no PASS/KILL verdict is possible without changing the frozen spec.",
+  "diagnostic_backtest_25bps": {
+    "bps_per_side": 25.0,
+    "final_equity": 108477.45330961197,
+    "total_return": 0.08477453309612026,
+    "sharpe_365": 0.4003047826404998,
+    "max_drawdown": -0.20697890995948864,
+    "n_trades": 42,
+    "n_signals": 74,
+    "seconds": 0.1
+  },
+  "cost_sensitivity_report_only": [
+    {
+      "bps_per_side": 10.0,
+      "final_equity": 110635.25510045621,
+      "total_return": 0.10635255100456109,
+      "sharpe_365": 0.4829332018287227,
+      "max_drawdown": -0.19572393342328576,
+      "n_trades": 42,
+      "n_signals": 74,
+      "seconds": 0.1
+    },
+    {
+      "bps_per_side": 25.0,
+      "final_equity": 108477.45330961197,
+      "total_return": 0.08477453309612026,
+      "sharpe_365": 0.4003047826404998,
+      "max_drawdown": -0.20697890995948864,
+      "n_trades": 42,
+      "n_signals": 74,
+      "seconds": 0.1
+    },
+    {
+      "bps_per_side": 50.0,
+      "final_equity": 104970.86645309464,
+      "total_return": 0.04970866453094547,
+      "sharpe_365": 0.2627325875745916,
+      "max_drawdown": -0.22540585249739264,
+      "n_trades": 42,
+      "n_signals": 74,
+      "seconds": 0.1
+    }
+  ],
+  "gates": [],
+  "verdict": "INVALID"
+}
