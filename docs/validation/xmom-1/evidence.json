@@ -1,0 +1,366 @@
+{
+  "strategy": "XMOM-1",
+  "trial": 3,
+  "verdict": "KILL",
+  "pre_registration_commit": "4b72b8a",
+  "smoke": false,
+  "run_started_utc": "2026-09-27T02:34:01.670121+00:00",
+  "run_finished_utc": "2026-09-27T02:35:13.072501+00:00",
+  "data": {
+    "source": "yfinance daily OHLCV via trade-data-equities EquitiesDataClient + YFinanceProvider, adjusted=True",
+    "range": [
+      "2015-01-01",
+      "2026-09-26"
+    ],
+    "range_note": "provider uses [start, end); end=2026-09-26 includes all 2026-09-25 bars, matching the pre-registered '2015-01-01 through 2026-09-25'",
+    "universe_file": "docs/research/evidence/universe.txt",
+    "universe_tickers": 271,
+    "grid": "SPY trading days",
+    "grid_bars": 2950,
+    "grid_span": [
+      "2015-01-02",
+      "2026-09-25"
+    ],
+    "cache": "evidence/cache/ (DiskCache, 365d TTL)"
+  },
+  "universe_counts": {
+    "universe": 271,
+    "eligible_ge95pct": 262,
+    "tradeable_no_leading_gap": 261,
+    "coverage_failures": [
+      "CARR",
+      "DELL",
+      "DOW",
+      "FTV",
+      "HPE",
+      "INVH",
+      "IR",
+      "MRNA"
+    ],
+    "rebal_stats_by_year": {
+      "2019": {
+        "rebalances": 12,
+        "months_traded": 12,
+        "mean_scored": 261.0,
+        "mean_n_per_leg": 26.0
+      },
+      "2020": {
+        "rebalances": 12,
+        "months_traded": 12,
+        "mean_scored": 261.0,
+        "mean_n_per_leg": 26.0
+      },
+      "2021": {
+        "rebalances": 12,
+        "months_traded": 12,
+        "mean_scored": 261.0,
+        "mean_n_per_leg": 26.0
+      },
+      "2022": {
+        "rebalances": 12,
+        "months_traded": 12,
+        "mean_scored": 261.0,
+        "mean_n_per_leg": 26.0
+      },
+      "2023": {
+        "rebalances": 12,
+        "months_traded": 12,
+        "mean_scored": 261.0,
+        "mean_n_per_leg": 26.0
+      },
+      "2024": {
+        "rebalances": 12,
+        "months_traded": 12,
+        "mean_scored": 261.0,
+        "mean_n_per_leg": 26.0
+      },
+      "2025": {
+        "rebalances": 12,
+        "months_traded": 12,
+        "mean_scored": 261.0,
+        "mean_n_per_leg": 26.0
+      },
+      "2026": {
+        "rebalances": 9,
+        "months_traded": 9,
+        "mean_scored": 261.0,
+        "mean_n_per_leg": 26.0
+      }
+    }
+  },
+  "costs": {
+    "commission_bps_per_side": 5.0,
+    "borrow_cost_annual_bps": 50.0,
+    "fills": "t+1 open (SimulatedExecutionHandler)",
+    "adjustment_basis": "pre_adjusted"
+  },
+  "walk_forward": {
+    "train": "60 calendar months",
+    "test": "12 calendar months",
+    "step": "12 calendar months",
+    "embargo_trading_days": 21,
+    "periods_per_year": 252,
+    "n_folds": 7,
+    "n_oos_bars": 1545,
+    "oos_span": [
+      "2020-02-03",
+      "2026-09-25"
+    ],
+    "folds": [
+      {
+        "fold": 0,
+        "train_start": "2019-01-03",
+        "train_end": "2019-12-31",
+        "train_months": "2015-01..2020-01",
+        "test_start": "2020-02-03",
+        "test_end": "2020-12-31",
+        "test_months": "2020-01..2021-01",
+        "oos_sharpe": 0.7900192954251062,
+        "oos_annualized": 0.16101175288510094,
+        "oos_return": 0.14733661358233374,
+        "oos_max_drawdown": -0.1441257580259765,
+        "n_oos_bars": 232
+      },
+      {
+        "fold": 1,
+        "train_start": "2019-01-03",
+        "train_end": "2020-12-31",
+        "train_months": "2016-01..2021-01",
+        "test_start": "2021-02-03",
+        "test_end": "2021-12-31",
+        "test_months": "2021-01..2022-01",
+        "oos_sharpe": -0.4903995438146468,
+        "oos_annualized": -0.10187938286749276,
+        "oos_return": -0.09380128098780993,
+        "oos_max_drawdown": -0.19233177270811885,
+        "n_oos_bars": 231
+      },
+      {
+        "fold": 2,
+        "train_start": "2019-01-03",
+        "train_end": "2021-12-31",
+        "train_months": "2017-01..2022-01",
+        "test_start": "2022-02-02",
+        "test_end": "2022-12-30",
+        "test_months": "2022-01..2023-01",
+        "oos_sharpe": 0.7717317487770277,
+        "oos_annualized": 0.1008216878674435,
+        "oos_return": 0.0916288853235605,
+        "oos_max_drawdown": -0.10733395269895107,
+        "n_oos_bars": 230
+      },
+      {
+        "fold": 3,
+        "train_start": "2019-01-03",
+        "train_end": "2022-12-30",
+        "train_months": "2018-01..2023-01",
+        "test_start": "2023-02-02",
+        "test_end": "2023-12-29",
+        "test_months": "2023-01..2024-01",
+        "oos_sharpe": -0.2329406524753091,
+        "oos_annualized": -0.0328843860128355,
+        "oos_return": -0.029928423925947856,
+        "oos_max_drawdown": -0.06270986972019554,
+        "n_oos_bars": 229
+      },
+      {
+        "fold": 4,
+        "train_start": "2019-01-03",
+        "train_end": "2023-12-29",
+        "train_months": "2019-01..2024-01",
+        "test_start": "2024-02-01",
+        "test_end": "2024-12-31",
+        "test_months": "2024-01..2025-01",
+        "oos_sharpe": 1.0231573112728025,
+        "oos_annualized": 0.13617613901435677,
+        "oos_return": 0.12415240083280743,
+        "oos_max_drawdown": -0.08419281653023447,
+        "n_oos_bars": 231
+      },
+      {
+        "fold": 5,
+        "train_start": "2020-01-02",
+        "train_end": "2024-12-31",
+        "train_months": "2020-01..2025-01",
+        "test_start": "2025-02-04",
+        "test_end": "2025-12-31",
+        "test_months": "2025-01..2026-01",
+        "oos_sharpe": -0.40740294550118106,
+        "oos_annualized": -0.05703089419738505,
+        "oos_return": -0.05196345976436678,
+        "oos_max_drawdown": -0.11745744424695193,
+        "n_oos_bars": 229
+      },
+      {
+        "fold": 6,
+        "train_start": "2021-01-04",
+        "train_end": "2025-12-31",
+        "train_months": "2021-01..2026-01",
+        "test_start": "2026-02-03",
+        "test_end": "2026-09-25",
+        "test_months": "2026-01..2026-10",
+        "oos_sharpe": 1.0212145562647283,
+        "oos_annualized": 0.3663714255620285,
+        "oos_return": 0.22374047425999177,
+        "oos_max_drawdown": -0.2596260949315575,
+        "n_oos_bars": 163
+      }
+    ]
+  },
+  "benchmark": {
+    "source": "irx_forward_filled",
+    "construction": "rf_daily = ^IRX_close/100/252 per trading day (simple interest); ^IRX gaps forward-filled; unfetchable ^IRX -> 0% cash (pre-registered fallback)",
+    "annualized": 0.028809085667534262,
+    "total": 0.1902111542298135
+  },
+  "gates": [
+    {
+      "name": "deflated_sharpe",
+      "metric": "dsr",
+      "op": "gte",
+      "threshold": 0.95,
+      "value": 1.0500041449867936e-05,
+      "passed": false,
+      "description": "DSR >= 0.95: under the null of no skill, the chance the true Sharpe is positive is at least 95% after correcting for the number of trials."
+    },
+    {
+      "name": "oos_sharpe",
+      "metric": "median_oos_sharpe",
+      "op": "gt",
+      "threshold": 1.0,
+      "value": 0.7717317487770277,
+      "passed": false,
+      "description": "Median walk-forward out-of-sample Sharpe > 1.0: the edge must survive unseen data, not just the fitted window."
+    },
+    {
+      "name": "max_drawdown",
+      "metric": "max_drawdown",
+      "op": "gt",
+      "threshold": -0.15,
+      "value": -0.2596260949315575,
+      "passed": false,
+      "description": "Max drawdown > -15% (i.e. drawdown shallower than 15%): the strategy must be survivable, not just profitable."
+    },
+    {
+      "name": "regime_stability",
+      "metric": "worst_regime_sharpe",
+      "op": "gt",
+      "threshold": 0.0,
+      "value": 0.162762064660058,
+      "passed": true,
+      "description": "Worst-regime Sharpe > 0: the edge must not lose money in either the calm or the stress regime."
+    },
+    {
+      "name": "beats_benchmark_net",
+      "metric": "excess_return_vs_benchmark_after_costs",
+      "op": "gt",
+      "threshold": 0.0,
+      "value": 0.03198089574213103,
+      "passed": true,
+      "description": "Annualized excess return vs benchmark, after the cost haircut, > 0: edge must beat buy-and-hold net of costs. Skipped (not failed) when no benchmark series is supplied."
+    },
+    {
+      "name": "sortino",
+      "metric": "sortino",
+      "op": "gte",
+      "threshold": 1.5,
+      "value": 0.5597871242274324,
+      "passed": false,
+      "description": "Sortino >= 1.5: risk-adjusted return against downside volatility only. Sharpe punishes upside jumps; Sortino does not, so positively-skewed (trend-style) edges are judged on their pain, not their lottery tickets. For symmetric returns Sortino ~= sqrt(2) x Sharpe, so 1.5 is calibrated to the same elite bar as OOS Sharpe > 1.0. A secondary gate \u2014 DSR stays the primary statistical gate because the multiple-testing deflation math is built for Sharpe and has no clean Sortino analogue."
+    },
+    {
+      "name": "calmar",
+      "metric": "calmar",
+      "op": "gte",
+      "threshold": 2.0,
+      "value": 0.23414434294707823,
+      "passed": false,
+      "description": "Calmar >= 2.0: annualized return at least twice the maximum drawdown (e.g. 20%/yr at a 10% maxDD). Return per unit of pain \u2014 complements the max-drawdown gate, which caps the pain but ignores how much return bought it. A secondary gate alongside Sortino."
+    }
+  ],
+  "evidence": {
+    "dsr": 1.0500041449867936e-05,
+    "median_oos_sharpe": 0.7717317487770277,
+    "max_drawdown": -0.2596260949315575,
+    "worst_regime_sharpe": 0.162762064660058,
+    "excess_return_vs_benchmark_after_costs": 0.03198089574213103,
+    "sortino": 0.5597871242274324,
+    "calmar": 0.23414434294707823
+  },
+  "dsr_detail": {
+    "sharpe_hat": 0.40399857633143943,
+    "n_obs": 1545,
+    "n_trials": 7,
+    "skewness": -0.40398216351192834,
+    "excess_kurtosis": 5.986151031633266,
+    "expected_sharpe_under_null": 0.5324358304904223,
+    "dsr": 1.0500041449867936e-05
+  },
+  "dsr_trial_sharpes": [
+    0.798,
+    0.485,
+    0.413,
+    0.379,
+    0.106,
+    -0.097,
+    -0.337
+  ],
+  "dsr_n_trials": 7,
+  "regimes": {
+    "regimes": {
+      "calm": {
+        "n_bars": 773,
+        "sharpe": 0.162762064660058,
+        "total_return": 0.03906534645995485,
+        "max_drawdown": -0.15246576813077384
+      },
+      "stress": {
+        "n_bars": 772,
+        "sharpe": 0.5588890165676065,
+        "total_return": 0.38194203639715973,
+        "max_drawdown": -0.25962609493155764
+      }
+    },
+    "worst_regime": "calm",
+    "worst_regime_sharpe": 0.162762064660058,
+    "label_source": "vol_regime"
+  },
+  "strategy_annualized_oos": 0.060789981409665295,
+  "borrow_sensitivity_report_only": {
+    "0.0": {
+      "oos_sharpe": 0.4160152422382759,
+      "oos_annualized": 0.06318530821535595,
+      "oos_max_drawdown": -0.259242824175111,
+      "final_equity": 166910.57996515886
+    },
+    "200.0": {
+      "oos_sharpe": 0.3680143688789501,
+      "oos_annualized": 0.05361772412757748,
+      "oos_max_drawdown": -0.26077931713465474,
+      "final_equity": 155356.09975642338
+    },
+    "50.0": {
+      "oos_sharpe": 0.40399857633143943,
+      "oos_annualized": 0.060789981409665295,
+      "oos_max_drawdown": -0.2596260949315575,
+      "final_equity": 163949.76011542286
+    }
+  },
+  "final_equity": 163949.76011542286,
+  "n_trades": 1271,
+  "n_signals": 2593,
+  "engine_metrics": {
+    "total_return": 0.6394976011542286,
+    "cagr": 0.06622093195556844,
+    "annualized_volatility": 0.17967559913464098,
+    "sharpe_ratio": 0.447064813519564,
+    "sortino_ratio": 0.618502796676264,
+    "max_drawdown": 0.2596260949315578,
+    "max_drawdown_duration_bars": 26.0,
+    "calmar_ratio": 0.25506269688732747,
+    "num_trades": 1271.0,
+    "win_rate": 0.47993705743509046,
+    "profit_factor": 1.0652202228522878,
+    "expectancy": 9.848707265408319
+  }
+}
