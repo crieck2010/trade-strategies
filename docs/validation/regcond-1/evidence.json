@@ -1,0 +1,345 @@
+{
+  "strategy": "REGCOND-1",
+  "trial": 4,
+  "verdict_official_7gate": "KILL",
+  "verdict_two_tier_supplementary": "PASS",
+  "spec_commit": "ca2aa4e",
+  "design_decisions": [
+    "D1",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D6",
+    "D7"
+  ],
+  "data": {
+    "symbols": [
+      "SPY",
+      "CPER",
+      "TLT",
+      "GLD"
+    ],
+    "warmup_start": "2015-01-01",
+    "trade_start": "2018-01-01",
+    "trade_end": "2026-09-25",
+    "grid_dates": 2950,
+    "symbol_hole_days": 0,
+    "source": "trade-data-equities YFinanceProvider, adjusted=True"
+  },
+  "walk_forward": {
+    "train_bars": 520,
+    "test_bars": 130,
+    "step_bars": 130,
+    "embargo_bars": 5,
+    "n_folds": 13,
+    "oos_bars": 1670,
+    "folds": [
+      {
+        "train_start": 0,
+        "train_end": 520,
+        "test_start": 525,
+        "test_end": 655,
+        "n_bars": 130,
+        "oos_sharpe": 2.2471262053012473,
+        "oos_return": 0.18618688480220746,
+        "oos_max_drawdown": -0.13425059383442384
+      },
+      {
+        "train_start": 130,
+        "train_end": 650,
+        "test_start": 655,
+        "test_end": 785,
+        "n_bars": 130,
+        "oos_sharpe": 1.546254918022808,
+        "oos_return": 0.08631184810616643,
+        "oos_max_drawdown": -0.0427879151013385
+      },
+      {
+        "train_start": 260,
+        "train_end": 780,
+        "test_start": 785,
+        "test_end": 915,
+        "n_bars": 130,
+        "oos_sharpe": 1.7406521284395184,
+        "oos_return": 0.09869835403817184,
+        "oos_max_drawdown": -0.04512178628094621
+      },
+      {
+        "train_start": 390,
+        "train_end": 910,
+        "test_start": 915,
+        "test_end": 1045,
+        "n_bars": 130,
+        "oos_sharpe": 0.4645466346965908,
+        "oos_return": 0.021014918591119036,
+        "oos_max_drawdown": -0.0438290019523454
+      },
+      {
+        "train_start": 520,
+        "train_end": 1040,
+        "test_start": 1045,
+        "test_end": 1175,
+        "n_bars": 130,
+        "oos_sharpe": -1.7973616306409057,
+        "oos_return": -0.11578467861130015,
+        "oos_max_drawdown": -0.15260691894315404
+      },
+      {
+        "train_start": 650,
+        "train_end": 1170,
+        "test_start": 1175,
+        "test_end": 1305,
+        "n_bars": 130,
+        "oos_sharpe": 0.28272484170145507,
+        "oos_return": 0.015851219377315706,
+        "oos_max_drawdown": -0.09343108987813742
+      },
+      {
+        "train_start": 780,
+        "train_end": 1300,
+        "test_start": 1305,
+        "test_end": 1435,
+        "n_bars": 130,
+        "oos_sharpe": 0.3035132198872415,
+        "oos_return": 0.01236543496215603,
+        "oos_max_drawdown": -0.06461078095197326
+      },
+      {
+        "train_start": 910,
+        "train_end": 1430,
+        "test_start": 1435,
+        "test_end": 1565,
+        "n_bars": 130,
+        "oos_sharpe": 1.9195839192624156,
+        "oos_return": 0.10122959942610099,
+        "oos_max_drawdown": -0.06077082238236253
+      },
+      {
+        "train_start": 1040,
+        "train_end": 1560,
+        "test_start": 1565,
+        "test_end": 1695,
+        "n_bars": 130,
+        "oos_sharpe": 2.3751979428963286,
+        "oos_return": 0.1336486938376491,
+        "oos_max_drawdown": -0.045709654702675295
+      },
+      {
+        "train_start": 1170,
+        "train_end": 1690,
+        "test_start": 1695,
+        "test_end": 1825,
+        "n_bars": 130,
+        "oos_sharpe": -0.24540437228554887,
+        "oos_return": -0.017182703766394303,
+        "oos_max_drawdown": -0.0617812598859262
+      },
+      {
+        "train_start": 1300,
+        "train_end": 1820,
+        "test_start": 1825,
+        "test_end": 1955,
+        "n_bars": 130,
+        "oos_sharpe": 2.787204240220718,
+        "oos_return": 0.1956147764801075,
+        "oos_max_drawdown": -0.0365097907434867
+      },
+      {
+        "train_start": 1430,
+        "train_end": 1950,
+        "test_start": 1955,
+        "test_end": 2085,
+        "n_bars": 130,
+        "oos_sharpe": 1.384681277082243,
+        "oos_return": 0.10996464195092526,
+        "oos_max_drawdown": -0.1010686608918987
+      },
+      {
+        "train_start": 1560,
+        "train_end": 2080,
+        "test_start": 2085,
+        "test_end": 2195,
+        "n_bars": 110,
+        "oos_sharpe": -0.05571227598238306,
+        "oos_return": -0.007836038628845743,
+        "oos_max_drawdown": -0.059878376555271284
+      }
+    ]
+  },
+  "oos_summary": {
+    "n_bars": 1670,
+    "total_return": 1.1235215468372557,
+    "annualized_return": 0.12034624857200593,
+    "sharpe": 0.9903592377967311,
+    "sortino": 1.4088711026796035,
+    "max_drawdown": -0.22961388534733518,
+    "max_drawdown_duration_bars": 159,
+    "calmar": 0.5241244378141987,
+    "profit_factor": 1.184144155776774,
+    "win_rate": 0.5598802395209581,
+    "skewness": -0.2618533030765081,
+    "excess_kurtosis": 4.229012410045522,
+    "volatility_ann": 0.12232831330430702
+  },
+  "benchmark_oos_summary": {
+    "n_bars": 1670,
+    "total_return": 0.5779399102787584,
+    "annualized_return": 0.07125162736344048,
+    "sharpe": 0.5934677694664726,
+    "sortino": 0.8343850831979129,
+    "max_drawdown": -0.2753021357107408,
+    "max_drawdown_duration_bars": 206,
+    "calmar": 0.25881247589849565,
+    "profit_factor": 1.1105195902765925,
+    "win_rate": 0.5359281437125748,
+    "skewness": -0.21401874586589156,
+    "excess_kurtosis": 6.630326220391673,
+    "volatility_ann": 0.13030460758961532
+  },
+  "dsr": {
+    "sharpe_hat": 0.9903592377967311,
+    "n_obs": 1670,
+    "n_trials": 2,
+    "skewness": -0.2618533030765081,
+    "excess_kurtosis": 4.229012410045522,
+    "expected_sharpe_under_null": 0.5185742875125131,
+    "dsr": 1.0
+  },
+  "dsr_trial_sharpes": [
+    0.918,
+    -0.493
+  ],
+  "regime_report": {
+    "regimes": {
+      "calm": {
+        "n_bars": 836,
+        "sharpe": 1.8425272687285463,
+        "total_return": 0.7833851245041588,
+        "max_drawdown": -0.12457161458122623
+      },
+      "stress": {
+        "n_bars": 834,
+        "sharpe": 0.44016512063307933,
+        "total_return": 0.19072516511411086,
+        "max_drawdown": -0.2218364863233271
+      }
+    },
+    "worst_regime": "stress",
+    "worst_regime_sharpe": 0.44016512063307933,
+    "label_source": "vol_regime"
+  },
+  "label_mix_oos": {
+    "EXPANSION": 299,
+    "NEUTRAL": 953,
+    "CONTRACTION": 943
+  },
+  "rebalances": 105,
+  "gates_official": [
+    {
+      "name": "deflated_sharpe",
+      "metric": "dsr",
+      "op": "gte",
+      "threshold": 0.95,
+      "value": 1.0,
+      "passed": true,
+      "description": "DSR >= 0.95: under the null of no skill, the chance the true Sharpe is positive is at least 95% after correcting for the number of trials."
+    },
+    {
+      "name": "oos_sharpe",
+      "metric": "median_oos_sharpe",
+      "op": "gt",
+      "threshold": 1.0,
+      "value": 1.384681277082243,
+      "passed": true,
+      "description": "Median walk-forward out-of-sample Sharpe > 1.0: the edge must survive unseen data, not just the fitted window."
+    },
+    {
+      "name": "max_drawdown",
+      "metric": "max_drawdown",
+      "op": "gt",
+      "threshold": -0.15,
+      "value": -0.22961388534733518,
+      "passed": false,
+      "description": "Max drawdown > -15% (i.e. drawdown shallower than 15%): the strategy must be survivable, not just profitable."
+    },
+    {
+      "name": "regime_stability",
+      "metric": "worst_regime_sharpe",
+      "op": "gt",
+      "threshold": 0.0,
+      "value": 0.44016512063307933,
+      "passed": true,
+      "description": "Worst-regime Sharpe > 0: the edge must not lose money in either the calm or the stress regime."
+    },
+    {
+      "name": "beats_benchmark_net",
+      "metric": "excess_return_vs_benchmark_after_costs",
+      "op": "gt",
+      "threshold": 0.0,
+      "value": 0.04909462120856545,
+      "passed": true,
+      "description": "Annualized excess return vs benchmark, after the cost haircut, > 0: edge must beat buy-and-hold net of costs. Skipped (not failed) when no benchmark series is supplied."
+    },
+    {
+      "name": "sortino",
+      "metric": "sortino",
+      "op": "gte",
+      "threshold": 1.5,
+      "value": 1.4088711026796035,
+      "passed": false,
+      "description": "Sortino >= 1.5: risk-adjusted return against downside volatility only. Sharpe punishes upside jumps; Sortino does not, so positively-skewed (trend-style) edges are judged on their pain, not their lottery tickets. For symmetric returns Sortino ~= sqrt(2) x Sharpe, so 1.5 is calibrated to the same elite bar as OOS Sharpe > 1.0. A secondary gate \u2014 DSR stays the primary statistical gate because the multiple-testing deflation math is built for Sharpe and has no clean Sortino analogue."
+    },
+    {
+      "name": "calmar",
+      "metric": "calmar",
+      "op": "gte",
+      "threshold": 2.0,
+      "value": 0.5241244378141987,
+      "passed": false,
+      "description": "Calmar >= 2.0: annualized return at least twice the maximum drawdown (e.g. 20%/yr at a 10% maxDD). Return per unit of pain \u2014 complements the max-drawdown gate, which caps the pain but ignores how much return bought it. A secondary gate alongside Sortino."
+    }
+  ],
+  "tier1_supplementary": {
+    "oos_sharpe": {
+      "value": 1.384681277082243,
+      "threshold": 0.3,
+      "pass": true
+    },
+    "max_drawdown": {
+      "value": -0.22961388534733518,
+      "threshold": -0.25,
+      "pass": true
+    },
+    "dsr": {
+      "value": 1.0,
+      "threshold": 0.8,
+      "pass": true
+    },
+    "beats_benchmark_net": {
+      "value": 0.04909462120856545,
+      "threshold": 0.0,
+      "pass": true
+    },
+    "sortino": {
+      "value": 1.4088711026796035,
+      "threshold": 0.75,
+      "pass": true
+    }
+  },
+  "cost_sensitivity": {
+    "2bps": {
+      "total_return": 1.1332921715373883,
+      "annualized_return": 0.12112259437187367,
+      "sharpe": 0.9959528307897487,
+      "max_drawdown": -0.2294447455881342
+    },
+    "10bps": {
+      "total_return": 1.1073322632030647,
+      "annualized_return": 0.11905319261567926,
+      "sharpe": 0.9810147441045568,
+      "max_drawdown": -0.22989575561093423
+    }
+  },
+  "official_cost_bps": 5.0
+}
