@@ -182,3 +182,25 @@ amendments after validation starts.
   risk-adjusted, not absolute, outperformance.
 - 5 bps/side is an assumption; validation must include a
   cost-sensitivity note (2/5/10 bps).
+
+---
+
+## Amendment 2026-09-27 (dated appendix — the frozen spec above is unchanged)
+
+The owner adopted the two-tier validation framework
+(`docs/validation/GATES.md`, 2026-09-27), superseding the standalone
+seven-gate set prospectively.
+
+- Trial 4's official verdict under the seven-gate set in force at
+  registration — **invalidated, 4/7** (evidence commit `8648551`) —
+  stands as the historical record and is not rewritten.
+- Under the adopted framework, REGCOND-1's Tier-1 numbers (computed
+  alongside the trial, no re-run) pass 5/5: OOS Sharpe +1.385 > 0.3,
+  maxDD −23.0% shallower than −25%, DSR 1.000 > 0.8, +4.91%/yr vs the
+  60/40 benchmark net, Sortino 1.41 > 0.75.
+- **Current status: Tier-1 validated → allocator candidate pool.**
+  The machine-readable entry evidence is `tier1_evidence.json`
+  (trade-allocate evidence contract, schema v1). Promotion to paper
+  still requires the owner's recorded approval plus incubation
+  enrollment per trade-lifecycle, and any allocated portfolio must
+  clear the Tier-2 portfolio gates.
