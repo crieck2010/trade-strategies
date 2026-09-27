@@ -123,3 +123,21 @@ gates are the binding constraints.)
 - Crypto trades 24/7/365: the √365 annualization and calendar-day folds are
   deliberate (not √252); any annualization mismatch vs the equity gates must be
   normalized in the validation harness and documented.
+
+## Amendment 2026-09-26 — gate set extended from 5 to 7
+
+The frozen specification above is unchanged. The gate set referenced in
+"Gates (trade-overfit standard preset, DSR n_trials = 7)" is amended:
+
+6. Sortino ≥ 1.5 (downside-adjusted return; trade-overfit standard preset)
+7. Calmar ≥ 2.0 (annualized return per unit of max drawdown; trade-overfit
+   standard preset)
+
+All seven must pass → PASS. Any failure → KILL.
+
+This amendment is dated and committed **before any validation data has been
+pulled** (the validation run for trial 3 has not started). The direction is
+conservative — the amended gate set is strictly harder to pass than the
+original five, so it cannot manufacture a PASS that the original set would
+have killed. DSR n_trials = 7 is unchanged. Trial-1 and trial-2 evidence is
+untouched by this amendment.
