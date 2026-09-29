@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "trade-strategies"
-version = "0.2.0"
+version = "0.3.0"
 description = "Comprehensive dependency-free library of trading strategies (trend, mean-reversion, momentum, volatility, volume, multi-asset, meta) with a lazy trade-backtest bridge"
 readme = "README.md"
 requires-python = ">=3.10"

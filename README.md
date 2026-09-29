@@ -54,6 +54,10 @@ class Strategy:
 - **Signals are edge-triggered**: a strategy emits `LONG`/`SHORT`/`EXIT`
   only when its regime *changes*, never a stream of repeats.
 - **`Signal.strength`** (0–1) carries conviction; sizers may scale by it.
+  Exception: target-weight production strategies (`production = True`,
+  currently `regcond_1`) document that a `LONG` signal's `strength` **is**
+  the target portfolio weight and `EXIT` means weight 0 — the pointed
+  trade-paper path sizes those as deltas vs live positions.
 - **Bars are structural**: dicts, sibling engine bars, or
   `trade_backtest.Bar` all work — anything with
   `timestamp/open/high/low/close/volume` attributes or keys.
@@ -84,6 +88,7 @@ class Strategy:
 | `trailing_stop` | meta | ATR trailing-stop exit overlay for **any** strategy |
 | `regime_filter` | meta | ADX switch: trend leg when trending, mean-reversion leg when not |
 | `ensemble_vote` | meta | Act only when ≥ N strategies agree per symbol |
+| `regcond_1` | regime | Monthly copper:gold regime tilt, fixed target weights (see below) |
 
 Every strategy exposes `get_parameters()` / `describe()` and is reachable
 by name via `get_strategy("sma_crossover")` — the surface research agents

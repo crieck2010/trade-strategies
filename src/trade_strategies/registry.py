@@ -24,6 +24,7 @@ from .momentum import (
     VWAPDeviation,
 )
 from .multi_asset import CrossSectionalMomentum, PairsTrading
+from .regcond_1 import RegCond1
 from .trend import DonchianBreakout, EMACrossover, MACDTrend, SMACrossover, Supertrend
 
 STRATEGY_REGISTRY: dict[str, type[Strategy]] = {
@@ -45,6 +46,7 @@ STRATEGY_REGISTRY: dict[str, type[Strategy]] = {
         VWAPDeviation,
         PairsTrading,
         CrossSectionalMomentum,
+        RegCond1,
         TrailingStop,
         RegimeFilter,
         EnsembleVote,
@@ -77,7 +79,8 @@ def describe_strategies(family: str | None = None) -> list[dict]:
     Meta strategies need members to instantiate; they are described from
     class attributes instead.
     """
-    demo_symbols = {"pairs_trading": ["A", "B"]}
+    demo_symbols = {"pairs_trading": ["A", "B"],
+                    "regcond_1": ["SPY", "CPER", "TLT", "GLD"]}
     out: list[dict] = []
     for name in list_strategies(family):
         cls = STRATEGY_REGISTRY[name]

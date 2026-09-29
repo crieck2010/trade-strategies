@@ -4,6 +4,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-09-28
+
+### Added
+- `trade_strategies.regcond_1.RegCond1` (registry name `regcond_1`): the
+  executable form of lifecycle candidate REGCOND-1 (Tier-1 validated 5/5,
+  status PAPER). Frozen design from
+  `docs/validation/regcond-1/PRE-REGISTRATION.md`: monthly copper:gold
+  regime tilt across SPY/CPER/TLT/GLD — EXPANSION 60/20/20/0, CONTRACTION
+  20/0/40/40, NEUTRAL 25/25/25/25 — rebalanced on the first trading day of
+  each month from the persisted label as of the prior month-end (fills at
+  the next open, 5 bps/side in the validated evidence). Regime labels come
+  from the frozen `trade_macro` pipeline (`ratio_series` → `enrich_ratios`
+  → `classify_regime`, `"standard"` preset), imported lazily so the package
+  keeps its dependency boundary. Target-weight `Signal` contract: a LONG
+  signal's `strength` IS the target portfolio weight, EXIT means weight 0;
+  the four signals of a rebalance sum to 1.0. Frozen universe enforced in
+  the constructor (exactly SPY/CPER/TLT/GLD); no parameters accepted.
+  `production = True` marks it runnable by the pointed trade-paper path.
+- `describe_strategies()` demo symbols for `regcond_1` so agent metadata
+  describes it fully instead of falling back.
+- `docs/validation/regcond-1/fidelity_check.py`: exact-fidelity proof —
+  streams the validation's own price grid through `RegCond1`, asserts
+  label/decision identity, and replays the strategy's labels through the
+  validation's simulator to reproduce the Tier-1 evidence numbers.
+- `tests/test_regcond_1.py`: 11 offline unit tests (registry wiring,
+  frozen universe/params, weight sums, warmup silence, EXPANSION /
+  CONTRACTION / NEUTRAL decisions, prior-month-end decision rule,
+  month-boundary-only emission, missing-leg hold policy).
+
+### Fixed
+- `__init__.__version__` now matches the package version (was stuck at
+  0.1.0 while pyproject said 0.2.0).
+
 ## [0.2.0] - 2026-09-27
 
 ### Added

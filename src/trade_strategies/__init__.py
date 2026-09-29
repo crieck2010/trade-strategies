@@ -40,9 +40,11 @@ from .registry import (
     list_families,
     list_strategies,
 )
+from .regcond_1 import WEIGHTS as REGCOND_1_WEIGHTS
+from .regcond_1 import RegCond1, SYMBOLS as REGCOND_1_SYMBOLS
 from .trend import DonchianBreakout, EMACrossover, MACDTrend, SMACrossover, Supertrend
 
-__version__ = "0.1.0"
+__version__ = "0.3.0"
 
 __all__ = [
     "BollingerReversion",
@@ -55,7 +57,10 @@ __all__ = [
     "MACDTrend",
     "OBVTrend",
     "PairsTrading",
+    "REGCOND_1_SYMBOLS",
+    "REGCOND_1_WEIGHTS",
     "RSI2MeanReversion",
+    "RegCond1",
     "RegimeFilter",
     "SMACrossover",
     "STRATEGY_REGISTRY",
