@@ -64,5 +64,11 @@ def run_backtest(
         execution=execution or tb.SimulatedExecutionHandler(),
         periods_per_year=periods_per_year,
         risk_free=risk_free,
+        # trade-backtest v0.2.0 requires a declared basis. Bars here come
+        # from arbitrary providers, so we assume the common vendor
+        # convention -- verify for your feed.
+        adjustment_basis="pre_adjusted",
+        adjustment_note="provider bars assumed split/dividend-adjusted -- "
+                        "verify for your feed",
     )
     return engine.run()
