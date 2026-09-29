@@ -1,0 +1,1675 @@
+{
+  "agent": "data_auditor",
+  "as_of": "2026-09-29T03:09:45.314181+00:00",
+  "universe": [
+    "SPY",
+    "CPER",
+    "TLT",
+    "GLD",
+    "SHY",
+    "IEF",
+    "TIP",
+    "HYG",
+    "LQD",
+    "MUB",
+    "SGOV",
+    "USO",
+    "DBA",
+    "DBB",
+    "UNG",
+    "DBC",
+    "SLV",
+    "UUP",
+    "FXE",
+    "FXY",
+    "FXB",
+    "FXC",
+    "USMV",
+    "SPLV",
+    "QUAL",
+    "EFA",
+    "EEM",
+    "SVXY",
+    "VXX",
+    "^VIX",
+    "AGG"
+  ],
+  "symbols": {
+    "SPY": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "1993-01-22",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "CPER": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2010-12-15",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [
+            "unexplained large single-session move -28.7% on 2015-02-02 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +45.7% on 2015-02-03 \u2014 no split signature, no recorded action (informational only)"
+          ],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "TLT": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2002-07-22",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "GLD": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2004-11-18",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "SHY": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2002-07-22",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "IEF": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2002-07-22",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "TIP": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2003-12-04",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "HYG": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2007-04-04",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "LQD": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2002-07-22",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "MUB": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2007-09-07",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "SGOV": {
+      "n_bars": 1590,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2020-06-01",
+            "2026-09-28"
+          ],
+          "first_tradable": "2020-05-26",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [
+            "stale feed: 11 consecutive identical closes (83.59)",
+            "stale feed: 11 consecutive identical closes (83.6)",
+            "stale feed: 13 consecutive identical closes (83.6)"
+          ],
+          "status": "fail"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 61 missing expected sessions (2020-07-03..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 61,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "stale feed: 11 consecutive identical closes (83.59)",
+        "stale feed: 11 consecutive identical closes (83.6)",
+        "stale feed: 13 consecutive identical closes (83.6)",
+        "coverage gap: 61 missing expected sessions (2020-07-03..2026-09-07)"
+      ]
+    },
+    "USO": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2006-04-10",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [
+            "unexplained large single-session move -25.3% on 2020-03-09 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move -25.1% on 2020-04-21 \u2014 no split signature, no recorded action (informational only)"
+          ],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "DBA": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2007-01-05",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "DBB": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2007-01-05",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "UNG": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2007-04-18",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "DBC": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2006-02-03",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "SLV": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2006-04-21",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [
+            "unexplained large single-session move -28.5% on 2026-01-30 \u2014 no split signature, no recorded action (informational only)"
+          ],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "UUP": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2007-02-20",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "FXE": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2005-12-12",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "FXY": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2007-02-12",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "FXB": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2006-06-21",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "FXC": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2006-06-21",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "USMV": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2011-10-18",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "SPLV": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2011-05-05",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "QUAL": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2013-07-12",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "EFA": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2001-08-14",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "EEM": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2003-04-07",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "SVXY": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2011-10-03",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [
+            "unexplained large single-session move -26.4% on 2016-06-24 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move -32.0% on 2018-02-05 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move -83.0% on 2018-02-06 \u2014 no split signature, no recorded action (informational only)"
+          ],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    "VXX": {
+      "n_bars": 2180,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2018-01-25",
+            "2026-09-28"
+          ],
+          "first_tradable": "2009-01-30",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [
+            "unexplained large single-session move +33.5% on 2018-02-05 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +37.1% on 2020-03-16 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +33.7% on 2020-06-11 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +27.3% on 2021-11-26 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +39.2% on 2024-08-05 \u2014 no split signature, no recorded action (informational only)"
+          ],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 83 missing expected sessions (2018-02-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 83,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 83 missing expected sessions (2018-02-19..2026-09-07)"
+      ]
+    },
+    "^VIX": {
+      "n_bars": 2953,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "1990-01-02",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [
+            "unexplained large single-session move +34.5% on 2015-06-29 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +25.5% on 2015-08-20 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +46.4% on 2015-08-21 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +45.3% on 2015-08-24 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +26.1% on 2015-12-11 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +49.3% on 2016-06-24 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +39.9% on 2016-09-09 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move -25.9% on 2017-04-24 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +46.4% on 2017-05-17 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +44.4% on 2017-08-10 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +32.5% on 2017-08-17 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +28.5% on 2018-02-02 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +115.6% on 2018-02-05 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +30.7% on 2018-03-22 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +28.7% on 2018-05-29 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +25.9% on 2018-06-25 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +43.9% on 2018-10-10 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +26.2% on 2018-12-04 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +25.1% on 2019-05-07 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +28.1% on 2019-05-13 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +39.6% on 2019-08-05 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +26.1% on 2019-08-14 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +25.2% on 2020-01-27 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +46.5% on 2020-02-24 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +42.1% on 2020-02-27 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +29.9% on 2020-03-09 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +40.0% on 2020-03-12 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +43.0% on 2020-03-16 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +48.0% on 2020-06-11 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +26.5% on 2020-09-03 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +61.6% on 2021-01-27 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +35.4% on 2021-02-25 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +26.3% on 2021-05-12 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +54.0% on 2021-11-26 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +25.8% on 2024-08-02 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +64.9% on 2024-08-05 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move -28.2% on 2024-08-06 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +38.1% on 2024-09-03 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +74.0% on 2024-12-18 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +39.6% on 2025-04-03 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +50.9% on 2025-04-04 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move -35.8% on 2025-04-09 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +31.8% on 2025-10-10 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +26.7% on 2026-01-20 \u2014 no split signature, no recorded action (informational only)",
+            "unexplained large single-session move +39.7% on 2026-06-05 \u2014 no split signature, no recorded action (informational only)"
+          ],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 109 missing expected sessions (2015-01-19..2026-07-03)"
+          ],
+          "status": "fail",
+          "n_missing": 109,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 109 missing expected sessions (2015-01-19..2026-07-03)"
+      ]
+    },
+    "AGG": {
+      "n_bars": 2951,
+      "checks": {
+        "survivorship": {
+          "check": "survivorship",
+          "threshold": "first_tradable <= first bar date and last_tradable >= last bar date (zero tolerance)",
+          "findings": [],
+          "status": "pass",
+          "window": [
+            "2015-01-02",
+            "2026-09-28"
+          ],
+          "first_tradable": "2003-09-22",
+          "last_tradable": null
+        },
+        "corporate_actions": {
+          "check": "corporate_actions",
+          "threshold": "|simple return| > 25% per session; split signature when close[t-1]/close[t] within 0.5% of a standard ratio [1.5, 2.0, 3.0, 4.0, 5.0, 10.0] / reciprocals for reverse splits",
+          "findings": [],
+          "status": "pass",
+          "n_jumps": 0
+        },
+        "stale_prints": {
+          "check": "stale_prints",
+          "threshold": "identical-close run >= 5 with zero volume, or >= 10 regardless of volume",
+          "findings": [],
+          "status": "pass"
+        },
+        "coverage_gaps": {
+          "check": "coverage_gaps",
+          "threshold": "missing expected sessions > 5, or a single run of > 3 consecutive missing expected sessions (calendar=weekday)",
+          "findings": [
+            "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+          ],
+          "status": "fail",
+          "n_missing": 111,
+          "longest_missing_run": 1
+        }
+      },
+      "quarantined": true,
+      "quarantine_reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    }
+  },
+  "quarantined": [
+    {
+      "symbol": "SPY",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "CPER",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "TLT",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "GLD",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "SHY",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "IEF",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "TIP",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "HYG",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "LQD",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "MUB",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "SGOV",
+      "reasons": [
+        "stale feed: 11 consecutive identical closes (83.59)",
+        "stale feed: 11 consecutive identical closes (83.6)",
+        "stale feed: 13 consecutive identical closes (83.6)",
+        "coverage gap: 61 missing expected sessions (2020-07-03..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "USO",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "DBA",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "DBB",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "UNG",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "DBC",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "SLV",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "UUP",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "FXE",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "FXY",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "FXB",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "FXC",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "USMV",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "SPLV",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "QUAL",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "EFA",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "EEM",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "SVXY",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "VXX",
+      "reasons": [
+        "coverage gap: 83 missing expected sessions (2018-02-19..2026-09-07)"
+      ]
+    },
+    {
+      "symbol": "^VIX",
+      "reasons": [
+        "coverage gap: 109 missing expected sessions (2015-01-19..2026-07-03)"
+      ]
+    },
+    {
+      "symbol": "AGG",
+      "reasons": [
+        "coverage gap: 111 missing expected sessions (2015-01-19..2026-09-07)"
+      ]
+    }
+  ],
+  "clean_universe": [],
+  "n_quarantined": 31,
+  "thresholds": {
+    "corp_action_jump_return": 0.25,
+    "split_ratio_tol": 0.005,
+    "stale_run_zero_volume": 5,
+    "stale_run_any_volume": 10,
+    "gap_total_tolerance": 5,
+    "gap_consecutive_tolerance": 3
+  }
+}

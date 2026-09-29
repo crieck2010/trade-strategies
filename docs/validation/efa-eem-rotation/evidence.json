@@ -1,0 +1,193 @@
+{
+  "strategy": "efa-eem-rotation",
+  "idea": "idea-0034",
+  "round": 5,
+  "verdict_tier1": "invalidated",
+  "walk_forward": {
+    "train_bars": 520,
+    "test_bars": 130,
+    "step_bars": 130,
+    "embargo_bars": 5,
+    "n_folds": 13,
+    "oos_bars": 1673,
+    "folds": [
+      {
+        "oos_sharpe": -1.366313876257289,
+        "oos_return": -0.24176842168287083,
+        "oos_max_drawdown": -0.33390629385180737,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 3.2018407298928113,
+        "oos_return": 0.3311502721226838,
+        "oos_max_drawdown": -0.05817777729018103,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": -1.4846559340252752,
+        "oos_return": -0.1391535806779246,
+        "oos_max_drawdown": -0.1415299660801408,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": -0.32948772526263104,
+        "oos_return": -0.028572407779551723,
+        "oos_max_drawdown": -0.09607036012853731,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 0.20432256169974786,
+        "oos_return": 0.00956338387233413,
+        "oos_max_drawdown": -0.1045016494579386,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": -0.49153759229326444,
+        "oos_return": -0.006222080026480503,
+        "oos_max_drawdown": -0.01788955917682966,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 0.34683002267721036,
+        "oos_return": 0.017118574806257447,
+        "oos_max_drawdown": -0.06312109865741722,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 1.9970257106792384,
+        "oos_return": 0.12959365027920233,
+        "oos_max_drawdown": -0.07967576886624783,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 1.0918542475983404,
+        "oos_return": 0.07635021901789085,
+        "oos_max_drawdown": -0.07673451821188249,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": -1.5434301677869977,
+        "oos_return": -0.13277839300158556,
+        "oos_max_drawdown": -0.13277839300158556,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 2.4756553912469785,
+        "oos_return": 0.2376946263140829,
+        "oos_max_drawdown": -0.05076395466583139,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 1.6657364398298673,
+        "oos_return": 0.18610268676621966,
+        "oos_max_drawdown": -0.13520772686165594,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 0.657512014818189,
+        "oos_return": 0.06915616579614547,
+        "oos_max_drawdown": -0.142395724196259,
+        "n_bars": 113
+      }
+    ]
+  },
+  "oos_summary": {
+    "n_bars": 1673,
+    "total_return": 0.4254187276322168,
+    "annualized_return": 0.05484338970889091,
+    "sharpe": 0.379758252213922,
+    "sortino": 0.520347394384706,
+    "max_drawdown": -0.33390629385180737,
+    "max_drawdown_duration_bars": 27,
+    "calmar": 0.1642478465327498,
+    "profit_factor": 1.0807402010023868,
+    "win_rate": 0.5098625224148237,
+    "skewness": -0.8850859973601264,
+    "excess_kurtosis": 14.242490624650706,
+    "volatility_ann": 0.18697202435617333
+  },
+  "benchmark": {
+    "kind": "bh",
+    "ref": "EFA",
+    "oos_summary": {
+      "n_bars": 1673,
+      "total_return": 0.8869620553138307,
+      "annualized_return": 0.10036697657682137,
+      "sharpe": 0.5940461484546193,
+      "sortino": 0.8318052162393097,
+      "max_drawdown": -0.33390629385180737,
+      "max_drawdown_duration_bars": 27,
+      "calmar": 0.30058426098840096,
+      "profit_factor": 1.1156676529557918,
+      "win_rate": 0.529587567244471,
+      "skewness": -0.6626754289855668,
+      "excess_kurtosis": 12.416470355908112,
+      "volatility_ann": 0.1923417535634099
+    },
+    "excess_return_net": -0.045523586867930455
+  },
+  "dsr": {
+    "sharpe_hat": 0.379758252213922,
+    "n_obs": 1673,
+    "n_trials": 27,
+    "skewness": -0.8850859973601264,
+    "excess_kurtosis": 14.242490624650706,
+    "expected_sharpe_under_null": 1.3216884440911443,
+    "dsr": 0.0
+  },
+  "n_trials": 27,
+  "tier1": {
+    "oos_sharpe": {
+      "value": 0.34683002267721036,
+      "threshold": 0.3,
+      "pass": true
+    },
+    "max_drawdown": {
+      "value": -0.33390629385180737,
+      "threshold": -0.25,
+      "pass": false
+    },
+    "dsr": {
+      "value": 0.0,
+      "threshold": 0.8,
+      "pass": false
+    },
+    "beats_benchmark_net": {
+      "value": -0.045523586867930455,
+      "threshold": 0.0,
+      "pass": false
+    },
+    "sortino": {
+      "value": 0.520347394384706,
+      "threshold": 0.75,
+      "pass": false
+    },
+    "cost_speed_limit": {
+      "value": {
+        "cost_sharpe_drag": 0.022129531119324006,
+        "budget": 0.12927132869010255,
+        "turnover_ann": 3.3248407643312103,
+        "round_trip_cost": 0.001,
+        "instrument_vol_ann": 0.15024451925363588,
+        "gross_sharpe": 0.38781398607030765
+      },
+      "pass": true
+    }
+  },
+  "trades": 105,
+  "turnover_total": 29.0,
+  "avg_abs_weights": {
+    "EFA": 0.34285714285714286,
+    "EEM": 0.3904761904761905,
+    "SHY": 0.26666666666666666
+  },
+  "data": {
+    "symbols": [
+      "EFA",
+      "EEM",
+      "SHY"
+    ],
+    "tstart": "2018-01-01",
+    "source": "yfinance daily adjusted via trade-data-equities, pre_adjusted"
+  }
+}

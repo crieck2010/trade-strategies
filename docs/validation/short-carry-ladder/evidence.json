@@ -1,0 +1,163 @@
+{
+  "strategy": "short-carry-ladder",
+  "idea": "idea-0010",
+  "round": 5,
+  "verdict_tier1": "validated",
+  "walk_forward": {
+    "train_bars": 520,
+    "test_bars": 130,
+    "step_bars": 130,
+    "embargo_bars": 5,
+    "n_folds": 8,
+    "oos_bars": 1002,
+    "folds": [
+      {
+        "oos_sharpe": 15.173392862152362,
+        "oos_return": 0.021189702777841157,
+        "oos_max_drawdown": -0.00019960713720779122,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 20.51805345861039,
+        "oos_return": 0.026701684628357203,
+        "oos_max_drawdown": -9.956671756738977e-05,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 21.828424374551666,
+        "oos_return": 0.028195370844361634,
+        "oos_max_drawdown": 0.0,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 21.584029100687296,
+        "oos_return": 0.027166745672374537,
+        "oos_max_drawdown": 0.0,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 19.933918922444672,
+        "oos_return": 0.02287225688093364,
+        "oos_max_drawdown": -9.958319382030734e-05,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 20.179910523954675,
+        "oos_return": 0.021941350178776187,
+        "oos_max_drawdown": -9.956337170646812e-05,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 20.803870786684033,
+        "oos_return": 0.019167495672173906,
+        "oos_max_drawdown": 0.0,
+        "n_bars": 130
+      },
+      {
+        "oos_sharpe": 20.533607974472435,
+        "oos_return": 0.013104730371687578,
+        "oos_max_drawdown": 0.0,
+        "n_bars": 92
+      }
+    ]
+  },
+  "oos_summary": {
+    "n_bars": 1002,
+    "total_return": 0.1951284243026572,
+    "annualized_return": 0.04585032083685858,
+    "sharpe": 19.504141284486487,
+    "sortino": 195.7484229933066,
+    "max_drawdown": -0.00019960713720779122,
+    "max_drawdown_duration_bars": 1,
+    "calmar": 229.70281262602526,
+    "profit_factor": 106.20896941665784,
+    "win_rate": 0.8323353293413174,
+    "skewness": 0.7489971080624305,
+    "excess_kurtosis": 0.4443570773716421,
+    "volatility_ann": 0.002298839252082382
+  },
+  "benchmark": {
+    "kind": "bh",
+    "ref": "SHY",
+    "oos_summary": {
+      "n_bars": 1002,
+      "total_return": 0.1468602930379279,
+      "annualized_return": 0.03506283906502783,
+      "sharpe": 1.7527522018966775,
+      "sortino": 2.8805405202764107,
+      "max_drawdown": -0.015760151703342995,
+      "max_drawdown_duration_bars": 42,
+      "calmar": 2.224778017688142,
+      "profit_factor": 1.3618140260928802,
+      "win_rate": 0.5249500998003992,
+      "skewness": 0.8224249450615397,
+      "excess_kurtosis": 6.016301805701118,
+      "volatility_ann": 0.019774418456832036
+    },
+    "excess_return_net": 0.010787481771830754
+  },
+  "dsr": {
+    "sharpe_hat": 19.504141284486487,
+    "n_obs": 1002,
+    "n_trials": 27,
+    "skewness": 0.7489971080624305,
+    "excess_kurtosis": 0.4443570773716421,
+    "expected_sharpe_under_null": 1.3216884440911443,
+    "dsr": 1.0
+  },
+  "n_trials": 27,
+  "tier1": {
+    "oos_sharpe": {
+      "value": 20.525830716541414,
+      "threshold": 0.3,
+      "pass": true
+    },
+    "max_drawdown": {
+      "value": -0.00019960713720779122,
+      "threshold": -0.25,
+      "pass": true
+    },
+    "dsr": {
+      "value": 1.0,
+      "threshold": 0.8,
+      "pass": true
+    },
+    "beats_benchmark_net": {
+      "value": 0.010787481771830754,
+      "threshold": 0.0,
+      "pass": true
+    },
+    "sortino": {
+      "value": 195.7484229933066,
+      "threshold": 0.75,
+      "pass": true
+    },
+    "cost_speed_limit": {
+      "value": {
+        "cost_sharpe_drag": 0.1562680192268195,
+        "budget": 6.501380428162193,
+        "turnover_ann": 0.825147347740668,
+        "round_trip_cost": 0.001,
+        "instrument_vol_ann": 0.005280334081300316,
+        "gross_sharpe": 19.50414128448658
+      },
+      "pass": true
+    }
+  },
+  "trades": 24,
+  "turnover_total": 5.0,
+  "avg_abs_weights": {
+    "SGOV": 0.9583333333333334,
+    "SHY": 0.0,
+    "IEF": 0.041666666666666664
+  },
+  "data": {
+    "symbols": [
+      "SGOV",
+      "SHY",
+      "IEF"
+    ],
+    "tstart": "2020-09-01",
+    "source": "yfinance daily adjusted via trade-data-equities, pre_adjusted"
+  }
+}
