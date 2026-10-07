@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-10-07
+
+### Added
+- `docs/validation/GATES.md`: "Multiplicity engine" section declaring
+  `trade-multitest` (crieck2010/trade-multitest v0.1.0) the canonical
+  multiplicity engine — DSR via `trade_multitest.dsr` (honesty rule
+  enforced in code), round-level White's Reality Check / Hansen's SPA
+  gate (a round both invalidate contributes no allocator candidates),
+  Holm step-down baseline, and the `multitest.request.v1` /
+  `multitest.report.v1` interchange for trade-agents (Occam's Desk).
+
+### Fixed
+- `__init__.__version__` now matches the package version (was 0.3.0
+  while pyproject said 0.3.1).
+
 ## [0.3.1] - 2026-09-28
 
 ### Fixed

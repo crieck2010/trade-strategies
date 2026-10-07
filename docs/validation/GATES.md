@@ -182,6 +182,31 @@ not retroactively re-judged: REGCOND-1 remains Tier-1 validated 5/5
 under the gate set in force at its trial. Pre-registrations continue to
 freeze the gate set in force at registration time (see Process notes).
 
+## Multiplicity engine: trade-multitest (adopted 2026-10-07)
+
+`trade-multitest` ([crieck2010/trade-multitest](https://github.com/crieck2010/trade-multitest))
+is the canonical multiplicity engine for this framework. All DSR figures
+in Tier-1/Tier-2 evidence are computed with `trade_multitest.dsr`,
+which derives `n_trials` from the full screened trial set — the honesty
+rule above is enforced in code, not just prose.
+
+Beyond the DSR, research rounds use the engine's round-level tests:
+
+- **White's Reality Check** — does *any* screened trial genuinely beat
+  the benchmark (stationary bootstrap p-value)?
+- **Hansen's SPA** — the studentised, more powerful version.
+- **Holm step-down** — the conservative per-trial baseline on raw
+  one-sided t-test p-values (never on DSR outputs; the DSR already
+  carries the correction).
+
+A round whose Reality Check *and* SPA both read `invalidated`
+contributes no candidates to the allocator pool, however good the best
+raw Sharpe looked. trade-agents (Occam's Desk) calls the engine through
+the versioned `multitest.request.v1` / `multitest.report.v1` JSON
+interchange (`trade-multitest` docs/INTEROP.md); the DSR pass/fail
+thresholds themselves stay with this document (Tier-1: DSR > 0.8;
+Tier-2 portfolio DSR ≥ 0.95).
+
 ## Process notes
 
 - Trial pre-registrations continue to freeze the *gate set in force at

@@ -44,7 +44,7 @@ from .regcond_1 import WEIGHTS as REGCOND_1_WEIGHTS
 from .regcond_1 import RegCond1, SYMBOLS as REGCOND_1_SYMBOLS
 from .trend import DonchianBreakout, EMACrossover, MACDTrend, SMACrossover, Supertrend
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 __all__ = [
     "BollingerReversion",
